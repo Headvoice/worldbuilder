@@ -1,0 +1,32 @@
+﻿@model HomeBrewManager.ViewModels.HomeBrewWithHomeBrewEntities
+@{
+    ViewBag.Title = "HomeBrewEntitiesForHomeBrew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.HomeBrew.Name's HomeBrewEntities</h2>
+
+@if (!Model.HomeBrewEntities.Any())
+{
+    <p>You don't have any entities in this homebrew yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+
+
+        </tr>
+        @foreach (var entity in Model.HomeBrewEntities)
+        {
+            <tr>
+                <td>@Html.ActionLink(entity.Name, "Details", "HomeBrewEntities", new { id = entitiy.Id }, null)</td>
+
+            </tr>
+        }
+    </table>
+
+
+}
+<button class="btn">@Html.ActionLink("Create Child Entity", "New", "HomeBrewEntities", new { userid = Model.HomeBrew.HomeBrewUserId}, null)</button>

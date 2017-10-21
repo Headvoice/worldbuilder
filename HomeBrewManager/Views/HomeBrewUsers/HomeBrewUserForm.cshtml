@@ -1,0 +1,27 @@
+﻿@model HomeBrewManager.Models.HomeBrewUser
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New User</h2>
+
+@using (Html.BeginForm("Create", "HomeBrewUsers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<HomeBrewManager.Models.HomeBrew>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if (!Model.Any())
+{
+    <p>No homebrews yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>User Owner ID</th>
+        </tr>
+        @foreach (var homebrew in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(homebrew.Name, "Details", "HomeBrews", new { id = homebrew.Id }, null)</td>
+                <td>@Html.ActionLink(Convert.ToString(homebrew.HomeBrewUserId), "Details", "HomeBrewUsers", new { id = homebrew.HomeBrewUserId }, null)</td>
+
+            </tr>
+        }
+    </table>
+}

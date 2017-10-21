@@ -1,0 +1,35 @@
+﻿@model HomeBrewManager.ViewModels.HomeBrewEntityFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Child for @Model.EntityParentName</h2>
+
+@using (Html.BeginForm("Save", "HomeBrewEntities"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Entity.Name)
+        @Html.TextBoxFor(m => m.Entity.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Entity.CategoryId)
+        @Html.DropDownListFor(m => m.Entity.CategoryId, new SelectList(Model.Categories, "Id", "CategoryText"), "Select Category", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Entity.DescriptionForPlayers)
+        @Html.TextBoxFor(m => m.Entity.DescriptionForPlayers, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Entity.GameMasterNotes)
+        @Html.TextBoxFor(m => m.Entity.GameMasterNotes, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.Entity.Id)
+    @Html.HiddenFor(m => m.Entity.ParentId)
+    @Html.HiddenFor(m => m.Entity.HomeBrewId)
+    @Html.HiddenFor(m => m.EntityParentName)
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+}

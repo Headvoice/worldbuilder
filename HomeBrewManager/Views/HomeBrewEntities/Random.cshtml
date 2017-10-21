@@ -1,0 +1,28 @@
+﻿@model HomeBrewManager.ViewModels.EntityWithChildrenViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Entity.Name</h2>
+
+<h3>Children</h3>
+<ul>
+    @*
+        Razorview code
+    *@
+
+    @if (Model.Children.Count == 0)
+    {
+        <text>No children.</text>
+    }
+    @foreach (var childentity in Model.Children)
+    {
+        <li>@childentity.Name</li>
+    }
+
+
+</ul>
+
+
+

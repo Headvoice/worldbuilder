@@ -1,0 +1,31 @@
+﻿@model HomeBrewManager.ViewModels.HomeBrewWithHomeBrewEntities
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.HomeBrew.Name</h2>
+
+
+
+@if (!Model.HomeBrewEntities.Any())
+{
+    <p>No child entities yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+        </tr>
+        @foreach (var entity in Model.HomeBrewEntities)
+        {
+            <tr>
+                <td>@Html.ActionLink(entity.Name, "Details", "HomeBrewEnities", new { id = entity.Id }, null)</td>
+
+
+            </tr>
+        }
+    </table>
+}
+<button class="btn">@Html.ActionLink("Create Child Entity", "New", "HomeBrewEntities", new { homebrewid = Model.HomeBrew.Id, parentid = Model.HomeBrew.Id }, null)</button>

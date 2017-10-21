@@ -1,0 +1,33 @@
+﻿@model HomeBrewManager.ViewModels.HomeBrewUserWithHomeBrews
+@{
+    ViewBag.Title = "HomeBrewsForUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.HomeBrewUser.Name's Homebrews</h2>
+
+
+@if (!Model.HomeBrews.Any())
+{
+    <p>You don't have any homebrews yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            
+            
+        </tr>
+        @foreach (var homebrew in Model.HomeBrews)
+        {
+            <tr>
+                <td>@Html.ActionLink(homebrew.Name, "Details", "HomeBrews", new { id = homebrew.Id }, null)</td>
+
+            </tr>
+        }
+    </table>
+    
+   
+}
+<button class="btn">@Html.ActionLink("Create Homebrew", "New", "HomeBrews", new { userid = Model.HomeBrewUser.Id }, null)</button>

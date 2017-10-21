@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3135F038-FC74-42E7-B8D9-FACCC39F0182}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeBrewManager</RootNamespace>
+    <AssemblyName>HomeBrewManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeBrewEntitiesController.cs" />
+    <Compile Include="Controllers\HomeBrewsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\HomeBrewUsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132131377_InitialModel.cs" />
+    <Compile Include="Migrations\201710132131377_InitialModel.Designer.cs">
+      <DependentUpon>201710132131377_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132140489_CategoryTypeChangedToShort.cs" />
+    <Compile Include="Migrations\201710132140489_CategoryTypeChangedToShort.Designer.cs">
+      <DependentUpon>201710132140489_CategoryTypeChangedToShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132231554_CategoryTypeChangedToString.cs" />
+    <Compile Include="Migrations\201710132231554_CategoryTypeChangedToString.Designer.cs">
+      <DependentUpon>201710132231554_CategoryTypeChangedToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132249356_ApplyAnnotationsToEntityName.cs" />
+    <Compile Include="Migrations\201710132249356_ApplyAnnotationsToEntityName.Designer.cs">
+      <DependentUpon>201710132249356_ApplyAnnotationsToEntityName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132327131_ApplyAnnotationsToEntityCategory.cs" />
+    <Compile Include="Migrations\201710132327131_ApplyAnnotationsToEntityCategory.Designer.cs">
+      <DependentUpon>201710132327131_ApplyAnnotationsToEntityCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132329194_RemovedEntityCategory.cs" />
+    <Compile Include="Migrations\201710132329194_RemovedEntityCategory.Designer.cs">
+      <DependentUpon>201710132329194_RemovedEntityCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710132331210_ReAddedEntityCategory.cs" />
+    <Compile Include="Migrations\201710132331210_ReAddedEntityCategory.Designer.cs">
+      <DependentUpon>201710132331210_ReAddedEntityCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710140021105_RenamedEntityDescriptionsToSummaryAndDetails.cs" />
+    <Compile Include="Migrations\201710140021105_RenamedEntityDescriptionsToSummaryAndDetails.Designer.cs">
+      <DependentUpon>201710140021105_RenamedEntityDescriptionsToSummaryAndDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710142253033_EntityDetailsRenamedGameMasterNotes.cs" />
+    <Compile Include="Migrations\201710142253033_EntityDetailsRenamedGameMasterNotes.Designer.cs">
+      <DependentUpon>201710142253033_EntityDetailsRenamedGameMasterNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710142253553_EntitySummaryRenamedDescriptionForPlayers.cs" />
+    <Compile Include="Migrations\201710142253553_EntitySummaryRenamedDescriptionForPlayers.Designer.cs">
+      <DependentUpon>201710142253553_EntitySummaryRenamedDescriptionForPlayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161613340_UsersDbSetCreated.cs" />
+    <Compile Include="Migrations\201710161613340_UsersDbSetCreated.Designer.cs">
+      <DependentUpon>201710161613340_UsersDbSetCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161617578_UserDataAnnotationsAdded.cs" />
+    <Compile Include="Migrations\201710161617578_UserDataAnnotationsAdded.Designer.cs">
+      <DependentUpon>201710161617578_UserDataAnnotationsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161621187_EnitiesRenamedHomeBrewEntities.cs" />
+    <Compile Include="Migrations\201710161621187_EnitiesRenamedHomeBrewEntities.Designer.cs">
+      <DependentUpon>201710161621187_EnitiesRenamedHomeBrewEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161704250_CategoriesModelAndDBSetAdded.cs" />
+    <Compile Include="Migrations\201710161704250_CategoriesModelAndDBSetAdded.Designer.cs">
+      <DependentUpon>201710161704250_CategoriesModelAndDBSetAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161730008_UserChangedToHomeBrewUser.cs" />
+    <Compile Include="Migrations\201710161730008_UserChangedToHomeBrewUser.Designer.cs">
+      <DependentUpon>201710161730008_UserChangedToHomeBrewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161742450_CategoriesTableAndTypeCreated.cs" />
+    <Compile Include="Migrations\201710161742450_CategoriesTableAndTypeCreated.Designer.cs">
+      <DependentUpon>201710161742450_CategoriesTableAndTypeCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161759014_CategoriesTableAndTypeCreated1.cs" />
+    <Compile Include="Migrations\201710161759014_CategoriesTableAndTypeCreated1.Designer.cs">
+      <DependentUpon>201710161759014_CategoriesTableAndTypeCreated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161800260_HomeBrewsTableAdded.cs" />
+    <Compile Include="Migrations\201710161800260_HomeBrewsTableAdded.Designer.cs">
+      <DependentUpon>201710161800260_HomeBrewsTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161801234_HomeBrewIdFKAddedToHomeBrewEntity.cs" />
+    <Compile Include="Migrations\201710161801234_HomeBrewIdFKAddedToHomeBrewEntity.Designer.cs">
+      <DependentUpon>201710161801234_HomeBrewIdFKAddedToHomeBrewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161829474_NoHomeBrewNoCategory.cs" />
+    <Compile Include="Migrations\201710161829474_NoHomeBrewNoCategory.Designer.cs">
+      <DependentUpon>201710161829474_NoHomeBrewNoCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161832049_ReaddedHomeBrewUsersTableAndModel.cs" />
+    <Compile Include="Migrations\201710161832049_ReaddedHomeBrewUsersTableAndModel.Designer.cs">
+      <DependentUpon>201710161832049_ReaddedHomeBrewUsersTableAndModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161833251_ReaddedHomeBrewIdToHomeBrewEntity.cs" />
+    <Compile Include="Migrations\201710161833251_ReaddedHomeBrewIdToHomeBrewEntity.Designer.cs">
+      <DependentUpon>201710161833251_ReaddedHomeBrewIdToHomeBrewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161905199_ReaddedCetegoryIdToHomeBrewEntity.cs" />
+    <Compile Include="Migrations\201710161905199_ReaddedCetegoryIdToHomeBrewEntity.Designer.cs">
+      <DependentUpon>201710161905199_ReaddedCetegoryIdToHomeBrewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161912340_AddedBulletModel.cs" />
+    <Compile Include="Migrations\201710161912340_AddedBulletModel.Designer.cs">
+      <DependentUpon>201710161912340_AddedBulletModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161927436_AddedNameAndHomeBrewUserIDToHomeBrew.cs" />
+    <Compile Include="Migrations\201710161927436_AddedNameAndHomeBrewUserIDToHomeBrew.Designer.cs">
+      <DependentUpon>201710161927436_AddedNameAndHomeBrewUserIDToHomeBrew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710161942305_FillCategories.cs" />
+    <Compile Include="Migrations\201710161942305_FillCategories.Designer.cs">
+      <DependentUpon>201710161942305_FillCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710162051086_ParentIdAddedToHomeBrewEntity.cs" />
+    <Compile Include="Migrations\201710162051086_ParentIdAddedToHomeBrewEntity.Designer.cs">
+      <DependentUpon>201710162051086_ParentIdAddedToHomeBrewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172003107_AddedBulletsToHomeBrew.cs" />
+    <Compile Include="Migrations\201710172003107_AddedBulletsToHomeBrew.Designer.cs">
+      <DependentUpon>201710172003107_AddedBulletsToHomeBrew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172005078_NoBulletsInHomeBrewAndHomeBrewEntity.cs" />
+    <Compile Include="Migrations\201710172005078_NoBulletsInHomeBrewAndHomeBrewEntity.Designer.cs">
+      <DependentUpon>201710172005078_NoBulletsInHomeBrewAndHomeBrewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172006232_DescriptionForPlayersAndGameMasterNotesAddedToHomeBrew.cs" />
+    <Compile Include="Migrations\201710172006232_DescriptionForPlayersAndGameMasterNotesAddedToHomeBrew.Designer.cs">
+      <DependentUpon>201710172006232_DescriptionForPlayersAndGameMasterNotesAddedToHomeBrew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181456179_ChangeCategoryPropertyValueToText.cs" />
+    <Compile Include="Migrations\201710181456179_ChangeCategoryPropertyValueToText.Designer.cs">
+      <DependentUpon>201710181456179_ChangeCategoryPropertyValueToText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181503352_FillCategoriesWithNewText.cs" />
+    <Compile Include="Migrations\201710181503352_FillCategoriesWithNewText.Designer.cs">
+      <DependentUpon>201710181503352_FillCategoriesWithNewText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181507535_FillCategoriesWithNewText1.cs" />
+    <Compile Include="Migrations\201710181507535_FillCategoriesWithNewText1.Designer.cs">
+      <DependentUpon>201710181507535_FillCategoriesWithNewText1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181510219_CategoriesTextPropToCategoryText.cs" />
+    <Compile Include="Migrations\201710181510219_CategoriesTextPropToCategoryText.Designer.cs">
+      <DependentUpon>201710181510219_CategoriesTextPropToCategoryText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181512589_FillCategoriesWithNewCategoryText.cs" />
+    <Compile Include="Migrations\201710181512589_FillCategoriesWithNewCategoryText.Designer.cs">
+      <DependentUpon>201710181512589_FillCategoriesWithNewCategoryText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bullet.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DeleteMe.cs" />
+    <Compile Include="Models\HomeBrew.cs" />
+    <Compile Include="Models\HomeBrewEntity.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\HomeBrewUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EntityWithChildrenViewModel.cs" />
+    <Compile Include="ViewModels\HomeBrewEntityFormViewModel.cs" />
+    <Compile Include="ViewModels\HomeBrewUserWithHomeBrews.cs" />
+    <Compile Include="ViewModels\HomeBrewWithHomeBrewEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-slate.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\HomeBrewEntities\Random.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\HomeBrewEntities\Index.cshtml" />
+    <Content Include="Views\HomeBrewEntities\Details.cshtml" />
+    <Content Include="Views\HomeBrewEntities\HomeBrewEntityForm.cshtml" />
+    <Content Include="Views\HomeBrewUsers\HomeBrewUserForm.cshtml" />
+    <Content Include="Views\HomeBrews\HomeBrewForm.cshtml" />
+    <Content Include="Views\HomeBrews\Index.cshtml" />
+    <Content Include="Views\HomeBrewUsers\Index.cshtml" />
+    <Content Include="Views\HomeBrews\Details.cshtml" />
+    <Content Include="Views\HomeBrewUsers\Details.cshtml" />
+    <Content Include="Views\HomeBrews\HomeBrewsForUser.cshtml" />
+    <Content Include="Views\HomeBrewEntities\HomeBrewEntitiesForHomeBrew.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710132131377_InitialModel.resx">
+      <DependentUpon>201710132131377_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132140489_CategoryTypeChangedToShort.resx">
+      <DependentUpon>201710132140489_CategoryTypeChangedToShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132231554_CategoryTypeChangedToString.resx">
+      <DependentUpon>201710132231554_CategoryTypeChangedToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132249356_ApplyAnnotationsToEntityName.resx">
+      <DependentUpon>201710132249356_ApplyAnnotationsToEntityName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132327131_ApplyAnnotationsToEntityCategory.resx">
+      <DependentUpon>201710132327131_ApplyAnnotationsToEntityCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132329194_RemovedEntityCategory.resx">
+      <DependentUpon>201710132329194_RemovedEntityCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710132331210_ReAddedEntityCategory.resx">
+      <DependentUpon>201710132331210_ReAddedEntityCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710140021105_RenamedEntityDescriptionsToSummaryAndDetails.resx">
+      <DependentUpon>201710140021105_RenamedEntityDescriptionsToSummaryAndDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710142253033_EntityDetailsRenamedGameMasterNotes.resx">
+      <DependentUpon>201710142253033_EntityDetailsRenamedGameMasterNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710142253553_EntitySummaryRenamedDescriptionForPlayers.resx">
+      <DependentUpon>201710142253553_EntitySummaryRenamedDescriptionForPlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161613340_UsersDbSetCreated.resx">
+      <DependentUpon>201710161613340_UsersDbSetCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161617578_UserDataAnnotationsAdded.resx">
+      <DependentUpon>201710161617578_UserDataAnnotationsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161621187_EnitiesRenamedHomeBrewEntities.resx">
+      <DependentUpon>201710161621187_EnitiesRenamedHomeBrewEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161704250_CategoriesModelAndDBSetAdded.resx">
+      <DependentUpon>201710161704250_CategoriesModelAndDBSetAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161730008_UserChangedToHomeBrewUser.resx">
+      <DependentUpon>201710161730008_UserChangedToHomeBrewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161742450_CategoriesTableAndTypeCreated.resx">
+      <DependentUpon>201710161742450_CategoriesTableAndTypeCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161759014_CategoriesTableAndTypeCreated1.resx">
+      <DependentUpon>201710161759014_CategoriesTableAndTypeCreated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161800260_HomeBrewsTableAdded.resx">
+      <DependentUpon>201710161800260_HomeBrewsTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161801234_HomeBrewIdFKAddedToHomeBrewEntity.resx">
+      <DependentUpon>201710161801234_HomeBrewIdFKAddedToHomeBrewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161829474_NoHomeBrewNoCategory.resx">
+      <DependentUpon>201710161829474_NoHomeBrewNoCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161832049_ReaddedHomeBrewUsersTableAndModel.resx">
+      <DependentUpon>201710161832049_ReaddedHomeBrewUsersTableAndModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161833251_ReaddedHomeBrewIdToHomeBrewEntity.resx">
+      <DependentUpon>201710161833251_ReaddedHomeBrewIdToHomeBrewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161905199_ReaddedCetegoryIdToHomeBrewEntity.resx">
+      <DependentUpon>201710161905199_ReaddedCetegoryIdToHomeBrewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161912340_AddedBulletModel.resx">
+      <DependentUpon>201710161912340_AddedBulletModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161927436_AddedNameAndHomeBrewUserIDToHomeBrew.resx">
+      <DependentUpon>201710161927436_AddedNameAndHomeBrewUserIDToHomeBrew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710161942305_FillCategories.resx">
+      <DependentUpon>201710161942305_FillCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710162051086_ParentIdAddedToHomeBrewEntity.resx">
+      <DependentUpon>201710162051086_ParentIdAddedToHomeBrewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172003107_AddedBulletsToHomeBrew.resx">
+      <DependentUpon>201710172003107_AddedBulletsToHomeBrew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172005078_NoBulletsInHomeBrewAndHomeBrewEntity.resx">
+      <DependentUpon>201710172005078_NoBulletsInHomeBrewAndHomeBrewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172006232_DescriptionForPlayersAndGameMasterNotesAddedToHomeBrew.resx">
+      <DependentUpon>201710172006232_DescriptionForPlayersAndGameMasterNotesAddedToHomeBrew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181456179_ChangeCategoryPropertyValueToText.resx">
+      <DependentUpon>201710181456179_ChangeCategoryPropertyValueToText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181503352_FillCategoriesWithNewText.resx">
+      <DependentUpon>201710181503352_FillCategoriesWithNewText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181507535_FillCategoriesWithNewText1.resx">
+      <DependentUpon>201710181507535_FillCategoriesWithNewText1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181510219_CategoriesTextPropToCategoryText.resx">
+      <DependentUpon>201710181510219_CategoriesTextPropToCategoryText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181512589_FillCategoriesWithNewCategoryText.resx">
+      <DependentUpon>201710181512589_FillCategoriesWithNewCategoryText.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>46063</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46063/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

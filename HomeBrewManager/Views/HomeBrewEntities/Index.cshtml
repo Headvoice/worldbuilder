@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HomeBrewManager.Models.HomeBrewEntity>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if (!Model.Any())
+{
+    <p>No homebrew entities yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Parent Homebrew</th>
+        </tr>
+        @foreach (var entity in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(entity.Name, "Details", "HomeBrewEntities", new { id = entity.Id }, null)</td>
+                <td>@entity.CategoryId</td>
+                <td>@Html.ActionLink(Convert.ToString(entity.ParentId), "Details", "HomeBrews", new { id = entity.HomeBrewId }, null)</td>
+               
+            </tr>
+        }
+    </table>
+}
+
