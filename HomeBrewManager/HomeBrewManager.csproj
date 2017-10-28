@@ -311,7 +311,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bullet.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\DeleteMe.cs" />
     <Compile Include="Models\HomeBrew.cs" />
     <Compile Include="Models\HomeBrewEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
