@@ -55,7 +55,7 @@ namespace HomeBrewManager.Controllers
             if (homebrew == null)
                 return HttpNotFound();
 
-            var childentities = _context.HomeBrewEntities.Where(c => c.HomeBrewId == homebrew.Id).ToList();
+            var childentities = _context.HomeBrewEntities.Where(c => c.ParentId == homebrew.Id).ToList();
 
             var vm = new HomeBrewWithHomeBrewEntities()
             {

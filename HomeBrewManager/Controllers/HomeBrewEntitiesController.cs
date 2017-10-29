@@ -34,11 +34,23 @@ namespace HomeBrewManager.Controllers
         public ActionResult Details(int id)
         {
 
-            var entity = _context.HomeBrewEntities.SingleOrDefault(e => e.Id == id);
-            if (entity == null)
+            var ent = _context.HomeBrewEntities.SingleOrDefault(e => e.Id == id);
+            if (ent == null)
                 return HttpNotFound();
 
-            return View(entity);
+            
+            var entchildren = from e in _context.HomeBrewEntities
+                           where e.ParentId == ent.Id
+                           select e;
+
+            var vm = new HomeBrewEntityWithChildren()
+            {
+                Entity = ent,
+                Children = entchildren
+            };
+          
+
+            return View(vm);
         }
 
         public ActionResult New(int homebrewid, int parentid)
@@ -46,6 +58,7 @@ namespace HomeBrewManager.Controllers
 
             var entity = new HomeBrewEntity()
             {
+                ParentId = parentid,
                 HomeBrewId = homebrewid
             };
 
@@ -93,14 +106,14 @@ namespace HomeBrewManager.Controllers
 
             _context.SaveChanges();
 
-            if (homebrewentity.ParentId > 0)
+            if (homebrewentity.ParentId == homebrewentity.HomeBrewId)
             {
-                return RedirectToAction("Details", "HomeBewEntities", new { id = homebrewentity.ParentId });
+                return RedirectToAction("Details", "HomeBrews", new { id = homebrewentity.HomeBrewId });
 
             }
             else
             {
-                return RedirectToAction("Details", "HomeBrews", new {id = homebrewentity.HomeBrewId});
+                return RedirectToAction("Details", "HomeBrewEntities", new { id = homebrewentity.ParentId });
 
             }
 
